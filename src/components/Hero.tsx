@@ -1,0 +1,107 @@
+import React from 'react';
+import { useShop } from '../context/ShopContext';
+import { ThreeBackground } from './ThreeBackground';
+import { ArrowDownRight, Sparkles, ChevronDown } from 'lucide-react';
+
+export const Hero: React.FC = () => {
+  const { setActiveView, setSelectedAestheticFilter } = useShop();
+
+  const handleCategoryClick = (filter: string | null, view: string = 'shop') => {
+    setSelectedAestheticFilter(filter);
+    setActiveView(view);
+  };
+
+  return (
+    <section className="relative w-full min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-black text-white">
+      {/* Editorial Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/vanta_hero.jpg"
+          alt="VANTA SS26 Hero Editorial"
+          className="w-full h-full object-cover object-center filter brightness-[0.7] contrast-[1.1] scale-105 transition-transform duration-1000"
+        />
+        {/* Three.js Interactive 3D Mesh Canvas Overlay */}
+        <ThreeBackground />
+
+        {/* Subtle Dark Vignette Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
+      </div>
+
+      {/* Hero Editorial Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full flex flex-col justify-between min-h-[80vh]">
+        {/* Top Tagline Pill */}
+        <div className="flex items-center space-x-3">
+          <span className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-white font-mono text-xs uppercase tracking-widest flex items-center space-x-2">
+            <span className="w-2 h-2 rounded-full bg-[#00f0ff] animate-ping" />
+            <span>INTERACTIVE 3D FASHION PLATFORM • SS26</span>
+          </span>
+        </div>
+
+        {/* Main Headline & Subheading */}
+        <div className="my-auto py-12 max-w-4xl">
+          <h1 className="font-editorial text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.9] text-white drop-shadow-2xl">
+            WEAR WHAT’S <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500 italic">
+              NEXT.
+            </span>
+          </h1>
+
+          <p className="mt-6 text-lg sm:text-xl md:text-2xl font-body font-light text-zinc-300 max-w-2xl leading-relaxed">
+            Discover the future of fashion. Avant-garde streetwear, Japanese deconstruction, Korean silhouettes & 3D luxury interactive styling.
+          </p>
+
+          {/* Action Buttons */}
+          <div className="mt-10 flex flex-wrap gap-4 sm:gap-6 font-mono text-xs sm:text-sm tracking-widest">
+            <button
+              onClick={() => handleCategoryClick(null, 'shop')}
+              className="px-8 py-4 bg-white text-black font-bold uppercase hover:bg-zinc-200 transition-all btn-magnetic flex items-center space-x-2 group"
+            >
+              <span>SHOP MEN</span>
+              <ArrowDownRight size={16} className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+            </button>
+
+            <button
+              onClick={() => handleCategoryClick(null, 'shop')}
+              className="px-8 py-4 bg-transparent border border-white/80 text-white font-bold uppercase hover:bg-white/10 transition-all btn-magnetic flex items-center space-x-2 group backdrop-blur-sm"
+            >
+              <span>SHOP WOMEN</span>
+              <ArrowDownRight size={16} className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+            </button>
+
+            <button
+              onClick={() => handleCategoryClick(null, 'trending')}
+              className="px-8 py-4 bg-zinc-900/80 border border-zinc-700 text-[#00f0ff] font-bold uppercase hover:bg-zinc-800 transition-all btn-magnetic flex items-center space-x-2 backdrop-blur-sm"
+            >
+              <Sparkles size={15} />
+              <span>EXPLORE TRENDS</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Footer info in Hero */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-t border-white/15 pt-6 text-zinc-400 font-mono text-xs gap-4">
+          <div className="flex space-x-6">
+            <div>
+              <span className="block text-white font-bold">ESTABLISHED</span>
+              <span>PARIS / TOKYO 2026</span>
+            </div>
+            <div>
+              <span className="block text-white font-bold">AESTHETICS</span>
+              <span>3D METROPOLITAN</span>
+            </div>
+          </div>
+
+          <a
+            href="#trending-now"
+            className="flex items-center space-x-2 text-white hover:text-zinc-300 transition-colors animate-bounce pt-2 sm:pt-0"
+          >
+            <span>SCROLL TO EXPLORE</span>
+            <ChevronDown size={16} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
