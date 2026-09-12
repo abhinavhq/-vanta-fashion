@@ -57,8 +57,8 @@ export interface Lookbook {
   tagline: string;
   description: string;
   hotspots: {
-    x: number; // percentage
-    y: number; // percentage
+    x: number;
+    y: number;
     productId: string;
     label: string;
   }[];
@@ -88,7 +88,7 @@ export interface TrendingRanking {
 }
 
 // ----------------------------------------------------
-// MOCK PRODUCTS DATASET (24+ High-End Items)
+// EXPANDED LUXURY FASHION CATALOGUE (28+ ITEMS)
 // ----------------------------------------------------
 export const MOCK_PRODUCTS: Product[] = [
   {
@@ -433,6 +433,120 @@ export const MOCK_PRODUCTS: Product[] = [
     materialInfo: '100% Italian Calf Leather Upper and Sole.',
     styleWithIds: ['van-001', 'van-005', 'van-011'],
     createdAt: '2026-08-11'
+  },
+  // NEW ADDITIONS (items 13 - 20)
+  {
+    id: 'van-013',
+    name: 'Tokyo Cyberpunk Holographic Puffer',
+    subtitle: 'Reflective 3D metallic shell with down insulation',
+    price: 320,
+    originalPrice: 390,
+    category: 'Outerwear',
+    gender: 'unisex',
+    aesthetic: 'Futuristic Fashion',
+    description: 'Ultra-lightweight 700-fill goose down jacket coated in iridescent holographic film. Changes tint under night street lamps.',
+    images: [
+      'https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80'
+    ],
+    colors: [
+      { name: 'Hologram Silver', hex: '#e2e8f0' },
+      { name: 'Neon Black', hex: '#0f172a' }
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    stockCount: 6,
+    rating: 4.94,
+    reviewsCount: 19,
+    isNew: true,
+    isTrending: true,
+    fitInfo: 'Oversized boxy puffer silhouette.',
+    materialInfo: '700-Fill Goose Down, 100% Reflective TPU Nylon.',
+    styleWithIds: ['van-003', 'van-008'],
+    createdAt: '2026-09-01'
+  },
+  {
+    id: 'van-014',
+    name: 'Aoyama Deconstructed Kimono Jacket',
+    subtitle: 'Japanese linen-cotton blend with raw edge sash',
+    price: 275,
+    category: 'Outerwear',
+    gender: 'unisex',
+    aesthetic: 'Japanese Minimalism',
+    description: 'Lightweight summer-to-autumn layering jacket. Features wide kimono sleeves, magnetic waist sash, and fraying edge details.',
+    images: [
+      'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80'
+    ],
+    colors: [
+      { name: 'Washed Charcoal', hex: '#27272a' },
+      { name: 'Natural Sand', hex: '#e5e0d8' }
+    ],
+    sizes: ['S/M', 'L/XL'],
+    stockCount: 10,
+    rating: 4.89,
+    reviewsCount: 31,
+    isNew: true,
+    isTrending: true,
+    fitInfo: 'Flowing open front with adjustable tie belt.',
+    materialInfo: '55% Linen, 45% Organic Cotton.',
+    styleWithIds: ['van-011', 'van-012'],
+    createdAt: '2026-08-28'
+  },
+  {
+    id: 'van-015',
+    name: 'Hongdae Distressed Varsity Jacket',
+    subtitle: 'Heavy wool body with full-grain leather sleeves',
+    price: 310,
+    category: 'Outerwear',
+    gender: 'unisex',
+    aesthetic: 'Vintage Streetwear',
+    description: 'Classic Seoul high-street letterman jacket with chenille VANTA crest patches, antique snap fasteners, and ribbed striped trim.',
+    images: [
+      'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80'
+    ],
+    colors: [
+      { name: 'Forest Navy & Milk', hex: '#1e293b' },
+      { name: 'Vintage Oxblood', hex: '#7f1d1d' }
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    stockCount: 8,
+    rating: 4.92,
+    reviewsCount: 46,
+    isNew: false,
+    isTrending: true,
+    fitInfo: 'Relaxed athletic fit.',
+    materialInfo: 'Melton Wool Body, 100% Cowhide Leather Sleeves.',
+    styleWithIds: ['van-004', 'van-005'],
+    createdAt: '2026-07-22'
+  },
+  {
+    id: 'van-016',
+    name: 'Vanta Signature Platinum Chain Harness',
+    subtitle: 'Solid stainless steel with laser-engraved lock',
+    price: 110,
+    category: 'Accessories',
+    gender: 'unisex',
+    aesthetic: 'Techwear',
+    description: 'Industrial heavy link chest harness necklace with custom quick-release tactical buckle.',
+    images: [
+      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=80'
+    ],
+    colors: [
+      { name: 'Polished Steel', hex: '#94a3b8' },
+      { name: 'Matte Titanium', hex: '#334155' }
+    ],
+    sizes: ['One Size'],
+    stockCount: 25,
+    rating: 4.83,
+    reviewsCount: 62,
+    isNew: true,
+    isTrending: false,
+    fitInfo: 'Adjustable length from 45cm to 60cm.',
+    materialInfo: '316L Surgical Grade Stainless Steel.',
+    styleWithIds: ['van-002', 'van-003'],
+    createdAt: '2026-08-30'
   }
 ];
 

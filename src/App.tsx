@@ -17,6 +17,7 @@ import { JournalPage } from './components/JournalPage';
 import { TrendingPage } from './components/TrendingPage';
 import { AdminDashboard } from './components/AdminDashboard';
 import { Footer } from './components/Footer';
+import { Cursor3D } from './components/Cursor3D';
 import { Sparkles } from 'lucide-react';
 
 const MainContent: React.FC = () => {
@@ -40,7 +41,10 @@ const MainContent: React.FC = () => {
   ).slice(0, 4);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col justify-between relative selection:bg-white selection:text-black">
+      {/* 3D Glowing Interactive Cursor */}
+      <Cursor3D />
+
       <Navbar />
 
       <main className="flex-1">
